@@ -1,24 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react'
+import ThemeContext from './Context/ThemeContext'
+import Header from './Components/Header'
+import Main from './Components/Main'
+import UserContext from './Context/UserContext'
+import AppTheme from './Data/Colors'
+import AppUsers from './Data/Users'
 
 
 function App() {
+  const themeHook = useState(Object.keys(AppTheme)[0])
+  const userHook = useState(Object.keys(AppUsers)[0])
+  console.log(userHook)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={themeHook}>
+      <UserContext.Provider value={userHook}>
+        <div>
+          <Header />
+          <Main />
+        </div>
+      </UserContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 
