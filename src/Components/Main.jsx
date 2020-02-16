@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import ThemeContext from '../Context/ThemeContext'
+import UserContext from '../Context/UserContext'
 import AppTheme from '../Data/Colors'
 
 const Main = () => {
   const theme = useContext(ThemeContext)[0];
+  const user = useContext(UserContext)
   const currentTheme = AppTheme[theme];
   return(
       <main style = {{
@@ -12,7 +14,7 @@ const Main = () => {
           color: `${currentTheme.textColor}`,
       
       }}>
-          <h1>Heading 1</h1>
+          <h1>{user}</h1>
           <p>This is a paragraph</p>
           <button> This is a button</button>
       </main>

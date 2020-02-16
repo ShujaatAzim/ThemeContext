@@ -10,7 +10,7 @@ const UserToggler = () => {
   
   return (
     <div style={userTogglerStyle} onClick={() => setUserLogged(userLogged === "Shu" ? "Fanty" : "Shu")}>
-      {`${userLogged === "Fanty" ? "Username" : "User"}`}: {userLogged}
+      Showing {`${userLogged === "Fanty" ? "Username" : "User"}`}
     </div>
   )
 }
