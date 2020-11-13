@@ -8,9 +8,11 @@ import AppUsers from './Data/Users'
 
 
 function App() {
+
   const themeHook = useState(Object.keys(AppTheme)[0])
   const userHook = useState(Object.keys(AppUsers)[0])
   console.log(userHook)
+  
   return (
     <ThemeContext.Provider value={themeHook}>
       <UserContext.Provider value={userHook}>

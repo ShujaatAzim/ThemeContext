@@ -4,9 +4,11 @@ import UserContext from '../Context/UserContext'
 import AppTheme from '../Data/Colors'
 
 const Main = () => {
-  const theme = useContext(ThemeContext)[0];
+
+  const theme = useContext(ThemeContext)[0]
   const user = useContext(UserContext)
-  const currentTheme = AppTheme[theme];
+  const currentTheme = AppTheme[theme]
+
   return(
       <main style = {{
           padding: "1rem",
